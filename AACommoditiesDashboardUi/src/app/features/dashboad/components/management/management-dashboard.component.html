@@ -1,0 +1,19 @@
+<h2>Management</h2>
+<div>
+    <app-model-select [models]="(models$|async)??[]" (selectionChanged)="modelSelectionChange($event)"></app-model-select>
+</div>
+<div>
+    <app-commodity-select [commodities]="(commodities$|async)??[]" (selectionChanged)="commoditySelectionChange($event)"></app-commodity-select>
+</div>
+
+<div>
+    <div>
+        <p><b>Total Daily Pnl grouped by Contract</b></p>
+
+        <div *ngFor="let result of (pnlByContracts$ | async)??[]" class="contract-pnl">
+            <div class="contact-name">{{result.contract}}</div>
+            <div class="contact-total-dailyPnl"><strong>{{result.totalPnlDaily | currency:'£'}}</strong></div>
+        </div>
+    </div>
+
+</div>

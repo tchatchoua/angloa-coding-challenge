@@ -1,0 +1,11 @@
+<h2>Developer</h2>
+<div>
+    <app-model-select [models]="(models$|async)??[]" (selectionChanged)="modelSelectionChange($event)"></app-model-select>
+</div>
+<div>
+    <app-commodity-select [commodities]="(commodities$|async)??[]" (selectionChanged)="commoditySelectionChange($event)"></app-commodity-select>
+</div>
+<hr/>
+<div>
+    <app-trade-table [trades]="(trades$| async)??[]"></app-trade-table> 
+</div>

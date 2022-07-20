@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>Commodity</mat-label>
+    <mat-select [ngModel]="selecetCommodityId" (ngModelChange)="commoditySelectionChange($event)" name="commodity">
+      <mat-option *ngFor="let commodity of commodities" [value]="commodity.id">
+        {{commodity.name}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>

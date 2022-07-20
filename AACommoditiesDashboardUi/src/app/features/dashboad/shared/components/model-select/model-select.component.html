@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>Model</mat-label>
+    <mat-select [ngModel]="selectedModelId" (ngModelChange)="modelSelectionChange($event)" name="model">
+      <mat-option *ngFor="let model of models" [value]="model.id">
+        {{model.name}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
